@@ -5,6 +5,7 @@ const bodyParser = require("body-parser")
 const passport = require("passport")
 const cookieSession = require("cookie-session")
 const morgan = require("morgan")
+const mongoose = require("mongoose")
 require("./passportSetup")
 
 /*
@@ -13,10 +14,14 @@ IMPORT ROUTES
 const logout = require("./api/routes/auth/logout")
 const googleAuth = require("./api/routes/auth/googleAuth")
 const googleCallback = require("./api/routes/auth/googleCallback")
+const signup = require("./api/routes/auth/signup")
 
-/*
-IMPORT ROUTES
-*/
+const uri =
+  "mongodb://127.0.0.1:27017/railer"
+  // `mongodb+srv://railer:${process.env.MONGOOSID}@railer.dmgui.mongodb.net/railer?retryWrites=true&w=majority`
+
+mongoose.connect(uri)
+
 const isLoggedIn = require("./api/middlewares/isloggedin")
 
 app.use(morgan("dev"))
@@ -57,6 +62,7 @@ app.get("/good", isLoggedIn, (req, res) =>
 app.use("/auth", googleAuth)
 app.use("/auth", googleCallback)
 app.use("/auth", logout)
+app.use("/auth", signup)
 
 app.use((req, res, next) => {
   const error = new Error("Not found")
