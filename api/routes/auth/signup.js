@@ -1,31 +1,56 @@
 const express = require("express")
 const router = express.Router()
 const mongoose = require("mongoose")
-const Signup = require("../../modules/signup")
+const bcrypt = require("bcrypt")
+const User = require("../../modules/userSchema")
 
 router.post("/signup", (req, res) => {
   const { name, email, password } = req.body
 
-  const user = new Signup({
-    _id: new mongoose.Types.ObjectId(),
-    name,
-    email,
-    password,
-  })
-  user
-    .save()
+  User.find({ email })
+    .exec()
     .then((user) => {
-      console.log("User: ", user)
-      res.status(200).json({
-        data: {
-          name,
-          email,
-          password,
-        },
-        user,
+      if (user.length >= 1) {
+        return res.status(409).json({
+          message: "Mail exists",
+        })
+      } else {
+        bcrypt.hash(password, 10, (err, hash) => {
+          if (err) {
+            return res.status(500).json({
+              error: err,
+            })
+          } else {
+            const user = new User({
+              _id: new mongoose.Types.ObjectId(),
+              name,
+              email,
+              password: hash,
+            })
+            user
+              .save()
+              .then((user) => {
+                res.status(201).json({
+                  message: "User created",
+                  data: user,
+                })
+              })
+              .catch((err) => {
+                res.status(400).json({
+                  message: "Error creating account",
+                  error: err,
+                })
+              })
+          }
+        })
+      }
+    })
+    .catch((err) => {
+      res.status(400).json({
+        message: "Error finding user",
+        error: err,
       })
     })
-    .catch((error) => console.log("Error signin up: ", error))
 })
 
 module.exports = router
