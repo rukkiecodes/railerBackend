@@ -11,6 +11,8 @@ require("./passportSetup")
 IMPORT ROUTES
 */
 const logout = require("./api/routes/auth/logout")
+const googleAuth = require("./api/routes/auth/googleAuth")
+const googleCallback = require("./api/routes/auth/googleCallback")
 
 /*
 IMPORT ROUTES
@@ -35,25 +37,14 @@ app.use(passport.session())
 
 app.get("/", (req, res) => res.send("Not loggedin"))
 app.get("/failed", (req, res) => res.send("Login failed"))
+
 // @ts-ignore
 app.get("/good", isLoggedIn, (req, res) =>
   res.send(`Welcome Mr ${req.user.displayName}`)
 )
 
-app.get(
-  "/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-)
-
-app.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/failed" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/good")
-  }
-)
-
+app.use("/auth", googleAuth)
+app.use("/auth", googleCallback)
 app.use("/auth", logout)
 
 module.exports = app

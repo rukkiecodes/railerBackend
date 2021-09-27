@@ -14,7 +14,7 @@ passport.use(
     {
       clientID: process.env.CLIENTID,
       clientSecret: process.env.CLIENTSECRET,
-      callbackURL: "http://localhost:3000/google/callback",
+      callbackURL: "http://localhost:3000/auth/google/callback",
     },
     (accessToken, refreshToken, profile, done) => {
       // use the profile info (mainly profile id) to check if the user is registerd in ur db
