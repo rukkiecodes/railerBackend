@@ -12,6 +12,11 @@ IMPORT ROUTES
 */
 const logout = require("./api/routes/auth/logout")
 
+/*
+IMPORT ROUTES
+*/
+const isLoggedIn = require("./api/middlewares/isloggedin")
+
 app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -24,14 +29,6 @@ app.use(
     keys: ["key1", "key2"],
   })
 )
-
-const isLoggedIn = (req, res, next) => {
-  if (req.user) {
-    next()
-  } else {
-    res.sendStatus(401)
-  }
-}
 
 app.use(passport.initialize())
 app.use(passport.session())
