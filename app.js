@@ -7,6 +7,11 @@ const passport = require("passport")
 const cookieSession = require("cookie-session")
 require("./passportSetup")
 
+/*
+IMPORT ROUTES
+*/
+const logout = require("./api/routes/auth/logout")
+
 app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -34,7 +39,9 @@ app.use(passport.session())
 app.get("/", (req, res) => res.send("Not loggedin"))
 app.get("/failed", (req, res) => res.send("Login failed"))
 // @ts-ignore
-app.get("/good", isLoggedIn, (req, res) => res.send(`Welcome Mr ${req.user.displayName}`))
+app.get("/good", isLoggedIn, (req, res) =>
+  res.send(`Welcome Mr ${req.user.displayName}`)
+)
 
 app.get(
   "/google",
@@ -50,10 +57,6 @@ app.get(
   }
 )
 
-app.get("/logout", (req, res) => {
-  req.session = null
-  req.logOut()
-  res.redirect("/")
-})
+app.use("/auth", logout)
 
-app.listen(3000, () => console.log(`server listening at post: ${3000}`))
+module.exports = app
