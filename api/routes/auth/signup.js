@@ -12,7 +12,7 @@ router.post("/signup", (req, res) => {
     .then((user) => {
       if (user.length >= 1) {
         return res.status(409).json({
-          message: "Mail exists",
+          message: "email exists",
         })
       } else {
         bcrypt.hash(password, 10, (err, hash) => {

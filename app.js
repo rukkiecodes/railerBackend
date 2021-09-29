@@ -15,6 +15,7 @@ const logout = require("./api/routes/auth/logout")
 const googleAuth = require("./api/routes/auth/googleAuth")
 const googleCallback = require("./api/routes/auth/googleCallback")
 const signup = require("./api/routes/auth/signup")
+const login = require("./api/routes/auth/login")
 
 const uri =
   "mongodb://127.0.0.1:27017/railer"
@@ -63,9 +64,11 @@ app.use("/auth", googleAuth)
 app.use("/auth", googleCallback)
 app.use("/auth", logout)
 app.use("/auth", signup)
+app.use("/auth", login)
 
 app.use((req, res, next) => {
   const error = new Error("Not found")
+  // @ts-ignore
   error.status(404)
   next(error)
 })
