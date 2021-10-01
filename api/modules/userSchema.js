@@ -3,14 +3,22 @@ const mongoose = require("mongoose")
 
 const userSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  name: { type: String, required: true },
-  email: {
+  fullName: { type: String, required: true },
+  userEmail: {
     type: String,
     required: true,
     unique: true,
     match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
   },
   password: { type: String, required: true },
+  sub: { type: String },
+  name: { type: String },
+  given_name: { type: String },
+  family_name: { type: String },
+  picture: { type: String },
+  email: { type: String },
+  email_verified: { type: String },
+  locale: { type: String },
 })
 
 module.exports = mongoose.model("User", userSchema)

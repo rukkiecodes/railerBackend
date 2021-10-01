@@ -6,7 +6,7 @@ const passport = require("passport")
 const cookieSession = require("cookie-session")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
-require("./passportSetup")
+require("./api/routes/auth/googleSetup")
 
 /*
 IMPORT ROUTES
