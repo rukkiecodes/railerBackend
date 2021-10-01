@@ -24,7 +24,6 @@ passport.use(
       User.find({ userEmail: profile._json.email })
         .exec()
         .then((user) => {
-          // console.log(user)
           if (user.length >= 1) {
             console.log("email exists")
             User.updateOne(
@@ -83,7 +82,6 @@ passport.use(
         .catch((err) => {
           console.log(err)
         })
-      // console.log("PASSED", profile._json)
       return done(null, profile)
     }
   )

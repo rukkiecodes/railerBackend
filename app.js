@@ -16,6 +16,7 @@ const googleAuth = require("./api/routes/auth/googleAuth")
 const googleCallback = require("./api/routes/auth/googleCallback")
 const signup = require("./api/routes/auth/signup")
 const login = require("./api/routes/auth/login")
+const getTemplates = require("./api/routes/template/getTemplates")
 
 const uri =
   "mongodb://127.0.0.1:27017/railer"
@@ -26,6 +27,7 @@ mongoose.connect(uri)
 const isLoggedIn = require("./api/middlewares/isloggedin")
 
 app.use(morgan("dev"))
+app.use("/uploads", express.static("uploads"))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -65,6 +67,8 @@ app.use("/auth", googleCallback)
 app.use("/auth", logout)
 app.use("/auth", signup)
 app.use("/auth", login)
+
+app.use("/template", getTemplates)
 
 app.use((req, res, next) => {
   const error = new Error("Not found")

@@ -1,0 +1,73 @@
+[{
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_all_purchase.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_all_purchase.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_bed_and_bath.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_bed_and_bath.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_bed_and_bath1.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_bed_and_bath1.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_coupon.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_coupon.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_dresses2.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_dresses2.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_end.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_end.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_ends_tonight.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_ends_tonight.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_everything.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_everything.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_everything2.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_everything2.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_family.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_family.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_mothers_day_gift.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_mothers_day_gift.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_mothers_day.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_mothers_day.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off_new_balances.png",
+  "html": "http://localhost:3000/uploads/templates/25_off_new_balances.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off4.png",
+  "html": "http://localhost:3000/uploads/templates/25_off4.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off5.png",
+  "html": "http://localhost:3000/uploads/templates/25_off5.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off6.png",
+  "html": "http://localhost:3000/uploads/templates/25_off6.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off11.png",
+  "html": "http://localhost:3000/uploads/templates/25_off11.html"
+}, {
+  "category": "discount",
+  "image": "http://localhost:3000/uploads/images/25_off13.png",
+  "html": "http://localhost:3000/uploads/templates/25_off13.html"
+}]
