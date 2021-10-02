@@ -5,33 +5,30 @@ const bodyParser = require("body-parser")
 const passport = require("passport")
 const cookieSession = require("cookie-session")
 const morgan = require("morgan")
-const mongoose = require("mongoose")
 require("./api/routes/auth/googleSetup")
+require("./api/controllers/connection") //mongo db connection
 
-/*
-IMPORT ROUTES
-*/
-const logout = require("./api/routes/auth/logout")
-const googleAuth = require("./api/routes/auth/googleAuth")
-const googleCallback = require("./api/routes/auth/googleCallback")
-const signup = require("./api/routes/auth/signup")
-const login = require("./api/routes/auth/login")
-const getProfile = require("./api/routes/auth/getProfile")
-const getTemplates = require("./api/routes/template/getTemplates")
+//IMPORT AUTH ROUTES
+const auth = {
+  signup: require("./api/routes/auth/signup"),
+  login: require("./api/routes/auth/login"),
+  getProfile: require("./api/routes/auth/getProfile"),
+  logout: require("./api/routes/auth/logout"),
+  googleAuth: require("./api/routes/auth/googleAuth"),
+  googleCallback: require("./api/routes/auth/googleCallback"),
+  home: require("./api/routes/auth/home"),
+  failedLogin: require("./api/routes/auth/failedLogin"),
+  googleAuthSuccess: require("./api/routes/auth/googleAuthSuccess"),
+}
 
-const uri =
-  "mongodb://127.0.0.1:27017/railer"
-  // `mongodb+srv://railer:${process.env.MONGOOSID}@railer.dmgui.mongodb.net/railer?retryWrites=true&w=majority`
-
-mongoose.connect(uri)
-
-const isLoggedIn = require("./api/middlewares/isloggedin")
+//IMPORT TEMPLATE ROUTES
+const template = {
+  getTemplates: require("./api/routes/template/getTemplates"),
+}
 
 app.use(morgan("dev"))
 app.use("/uploads", express.static("uploads"))
-
 app.use(bodyParser.urlencoded({ extended: false }))
-
 app.use(bodyParser.json())
 
 app.use((req, res, next) => {
@@ -55,22 +52,19 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get("/", (req, res) => res.send("Not loggedin"))
-app.get("/failed", (req, res) => res.send("Login failed"))
+app.use(auth.home)
+app.use(auth.failedLogin)
+app.use(auth.googleAuthSuccess)
+app.use("/auth", [
+  auth.googleAuth,
+  auth.googleCallback,
+  auth.logout,
+  auth.signup,
+  auth.login,
+  auth.getProfile
+])
 
-app.get("/good", isLoggedIn, (req, res) =>
-  // @ts-ignore
-  res.send(`Welcome Mr ${req.user.displayName}`)
-)
-
-app.use("/auth", googleAuth)
-app.use("/auth", googleCallback)
-app.use("/auth", logout)
-app.use("/auth", signup)
-app.use("/auth", login)
-app.use("/auth", getProfile)
-
-app.use("/template", getTemplates)
+app.use("/template", [template.getTemplates])
 
 app.use((req, res, next) => {
   const error = new Error("Not found")
@@ -88,4 +82,5 @@ app.use((error, req, res, next) => {
   })
 })
 
-module.exports = app
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`Server runing on port: ${port}`))

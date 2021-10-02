@@ -33,6 +33,7 @@ passport.use(
                   id: profile._json.sub,
                   name: profile._json.email,
                   given_name: profile._json.name,
+                  // @ts-ignore
                   family_name: profile._json.family_name,
                   picture: profile._json.picture,
                   email: profile._json.email,
@@ -61,6 +62,7 @@ passport.use(
                   sub: profile._json.sub,
                   name: profile._json.email,
                   given_name: profile._json.name,
+                  // @ts-ignore
                   family_name: profile._json.family_name,
                   picture: profile._json.picture,
                   email: profile._json.email,
