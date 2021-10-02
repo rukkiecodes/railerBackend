@@ -16,6 +16,7 @@ const googleAuth = require("./api/routes/auth/googleAuth")
 const googleCallback = require("./api/routes/auth/googleCallback")
 const signup = require("./api/routes/auth/signup")
 const login = require("./api/routes/auth/login")
+const getProfile = require("./api/routes/auth/getProfile")
 const getTemplates = require("./api/routes/template/getTemplates")
 
 const uri =
@@ -67,6 +68,7 @@ app.use("/auth", googleCallback)
 app.use("/auth", logout)
 app.use("/auth", signup)
 app.use("/auth", login)
+app.use("/auth", getProfile)
 
 app.use("/template", getTemplates)
 

@@ -30,7 +30,7 @@ passport.use(
               { userEmail: profile._json.email },
               {
                 $set: {
-                  sub: profile._json.sub,
+                  id: profile._json.sub,
                   name: profile._json.email,
                   given_name: profile._json.name,
                   family_name: profile._json.family_name,
@@ -42,10 +42,10 @@ passport.use(
               }
             )
               .exec()
-              .then(result => {
+              .then((result) => {
                 console.log("UPDATED: ", result)
               })
-              .catch(updateError => {
+              .catch((updateError) => {
                 console.log("UPDATE ERROR: ", updateError)
               })
           } else {

@@ -5,9 +5,9 @@ const bcrypt = require("bcrypt")
 const User = require("../../modules/userSchema")
 
 router.post("/signup", (req, res) => {
-  const { name, email, password } = req.body
+  const { username, registrationEmail, password } = req.body
 
-  User.find({ email })
+  User.find({ registrationEmail })
     .exec()
     .then((user) => {
       if (user.length >= 1) {
@@ -23,16 +23,16 @@ router.post("/signup", (req, res) => {
           } else {
             const user = new User({
               _id: new mongoose.Types.ObjectId(),
-              fullName: name,
-              userEmail: email,
+              username,
+              registrationEmail,
               password: hash,
             })
             user
               .save()
-              .then((user) => {
+              .then((result) => {
                 res.status(201).json({
                   message: "User created",
-                  data: user,
+                  data: result,
                 })
               })
               .catch((err) => {
