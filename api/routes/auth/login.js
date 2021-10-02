@@ -5,9 +5,9 @@ const User = require("../../modules/userSchema")
 const jwt = require("jsonwebtoken")
 
 router.post("/login", (req, res) => {
-  const { email, password } = req.body
+  const { registrationEmail, password } = req.body
 
-  User.find({ email })
+  User.find({ registrationEmail })
     .exec()
     .then((user) => {
       if (user.length < 1) {
@@ -24,7 +24,7 @@ router.post("/login", (req, res) => {
         if (result) {
           const token = jwt.sign(
             {
-              email: user[0].email,
+              registrationEmail: user[0].registrationEmail,
               userId: user[0]._id,
             },
             process.env.JWT_KEY,
