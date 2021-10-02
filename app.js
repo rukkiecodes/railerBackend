@@ -26,6 +26,11 @@ const template = {
   getTemplates: require("./api/routes/template/getTemplates"),
 }
 
+//IMPORT FOLE IMPORTATION ROUTES
+const fileImportation = {
+  importExcel: require("./api/routes/import/importExcel"),
+}
+
 app.use(morgan("dev"))
 app.use("/uploads", express.static("uploads"))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -65,6 +70,7 @@ app.use("/auth", [
 ])
 
 app.use("/template", [template.getTemplates])
+app.use("/import", [fileImportation.importExcel])
 
 app.use((req, res, next) => {
   const error = new Error("Not found")
