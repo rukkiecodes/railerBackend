@@ -4,8 +4,8 @@ const router = express.Router()
 const User = require("../../modules/userSchema")
 
 router.get("/profile", (req, res) => {
-  const { registrationEmail } = req.body
-  User.find({ registrationEmail })
+  const { email } = req.body
+  User.find({ email })
     .exec()
     .then((data) => {
       return res.status(200).json({

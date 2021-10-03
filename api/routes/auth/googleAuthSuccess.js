@@ -4,7 +4,7 @@ const isLoggedIn = require("../../middlewares/isloggedin") //check if oAuth auth
 
 router.get("/good", isLoggedIn, (req, res) =>
   // @ts-ignore
-  res.send(`Welcome Mr ${req.user.displayName}`)
+  res.send(`Welcome`)
 )
 
 module.exports = router

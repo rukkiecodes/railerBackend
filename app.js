@@ -5,31 +5,14 @@ const bodyParser = require("body-parser")
 const passport = require("passport")
 const cookieSession = require("cookie-session")
 const morgan = require("morgan")
-require("./api/routes/auth/googleSetup")
-require("./api/controllers/connection") //mongo db connection
+const session = require("express-session")
 
-//IMPORT AUTH ROUTES
-const auth = {
-  signup: require("./api/routes/auth/signup"),
-  login: require("./api/routes/auth/login"),
-  getProfile: require("./api/routes/auth/getProfile"),
-  logout: require("./api/routes/auth/logout"),
-  googleAuth: require("./api/routes/auth/googleAuth"),
-  googleCallback: require("./api/routes/auth/googleCallback"),
-  home: require("./api/routes/auth/home"),
-  failedLogin: require("./api/routes/auth/failedLogin"),
-  googleAuthSuccess: require("./api/routes/auth/googleAuthSuccess"),
-}
+require("./api/config/connection") //mongo db connection
+require("./api/config/passport")(passport)
 
-//IMPORT TEMPLATE ROUTES
-const template = {
-  getTemplates: require("./api/routes/template/getTemplates"),
-}
-
-//IMPORT FOLE IMPORTATION ROUTES
-const fileImportation = {
-  importExcel: require("./api/routes/import/importExcel"),
-}
+const auth = require("./api/routes/auth/auth")
+const googleAuthSuccess = require("./api/routes/auth/googleAuthSuccess")
+const home = require("./api/routes/auth/home")
 
 app.use(morgan("dev"))
 app.use("/uploads", express.static("uploads"))
@@ -48,29 +31,19 @@ app.use((req, res, next) => {
 })
 
 app.use(
-  cookieSession({
-    name: "railerSession",
-    keys: ["key1", "key2"],
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
   })
 )
 
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use(auth.home)
-app.use(auth.failedLogin)
-app.use(auth.googleAuthSuccess)
-app.use("/auth", [
-  auth.googleAuth,
-  auth.googleCallback,
-  auth.logout,
-  auth.signup,
-  auth.login,
-  auth.getProfile
-])
-
-app.use("/template", [template.getTemplates])
-app.use("/import", [fileImportation.importExcel])
+app.use("/auth", auth)
+app.use(googleAuthSuccess)
+app.use(home)
 
 app.use((req, res, next) => {
   const error = new Error("Not found")
