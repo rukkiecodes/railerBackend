@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <v-app id="app">
+  <v-app id="main">
     {{>_header}}
     <v-main>
       <v-container fluid>
@@ -27,10 +27,8 @@
   <script src="/script/vuetify.js"></script>
   <script>
     new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!'
-      },
+      el: '#main',
+      data: {},
       vuetify: new Vuetify(),
     })
   </script>
