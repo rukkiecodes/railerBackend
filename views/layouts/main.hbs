@@ -5,20 +5,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style/lib/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/style/lib/roboto.css" rel="stylesheet">
+  <link href="/style/lib/icon/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="/style/lib/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="/style/css/main.css">
   <title>Railer</title>
 </head>
 
 <body>
-  <div class="container">
-    {{{body}}}
-  </div>
+  <v-app id="app">
+    {{>_header}}
+    <v-main>
+      <v-container fluid>
+        {{{body}}}
+      </v-container>
+    </v-main>
+  </v-app>
 
-  <script src="/script/materialize.min.js"></script>
+  <script src="/script/vue.js"></script>
+  <script src="/script/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      },
+      vuetify: new Vuetify(),
+    })
+  </script>
 </body>
 
 </html>
