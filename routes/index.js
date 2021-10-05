@@ -12,6 +12,15 @@ router.get("/", ensureGuest, (req, res) => {
   })
 })
 
+// @desc Login/Landing page
+// @route GET /
+
+router.get("/signup", ensureGuest, (req, res) => {
+  res.render("signup", {
+    layout: "signup",
+  })
+})
+
 // @desc Login/Dashboard
 // @route GET / dashboard
 
@@ -25,7 +34,7 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
     })
   } catch (error) {
     console.error(error)
-    res.render('error/500')
+    res.render("error/500")
   }
 })
 

@@ -9,8 +9,6 @@ const session = require("express-session")
 const MongoStore = require("connect-mongo")
 const connectDB = require("./config/db")
 const reload = require("reload")
-// const livereload = require("livereload")
-// const connectLivereload = require("connect-livereload")
 
 // Load config
 dotenv.config({ path: "./config/config.env" })
@@ -20,20 +18,11 @@ require("./config/passport")(passport)
 
 connectDB()
 
-const publicDirectory = path.join(__dirname, "public")
-const viewsDirectory = path.join(__dirname, "views")
-// const livereloadServer = livereload.createServer()
-// livereloadServer.watch([publicDirectory, viewsDirectory])
-
-// livereloadServer.server.once("connection", () => {
-//   setTimeout(() => {
-//     livereloadServer.refresh("/")
-//   }, 100)
-// })
-
 const app = express()
 
-// app.use(connectLivereload())
+// Body parser
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"))
@@ -65,8 +54,8 @@ app.use("/auth", require("./routes/auth"))
 app.use("/stories", require("./routes/stories"))
 
 // Static folder
-app.use(express.static(publicDirectory))
-app.use(express.static(viewsDirectory))
+app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "views")))
 
 const PORT = process.env.PORT || 3000
 
