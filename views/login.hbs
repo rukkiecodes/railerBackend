@@ -7,15 +7,18 @@
 </v-card-text>
 
 <v-form>
-  <v-text-field outlined dense prepend-inner-icon="mdi-email" color="deep-purple accent-4" label="Email" required>
+  <v-text-field outlined dense prepend-inner-icon="mdi-email" color="deep-purple accent-4" label="Email" type="email"
+    required>
   </v-text-field>
 
   <v-text-field outlined dense prepend-inner-icon="mdi-lock" color="deep-purple accent-4" label="password"
-    type="password" required></v-text-field>
+    :append-icon="showLoginPassword ? 'mdi-eye' : 'mdi-eye-off'" @click:append="showLoginPassword = !showLoginPassword"
+    :type="showLoginPassword ? 'text' : 'password'" required></v-text-field>
 
   <div class="d-flex justify-space-between align-center mb-6">
     <a class="text-decoration-none indigo--text text--accent-3 text-caption" href="/signup">Don't have an account?</a>
-    <a class="text-decoration-none indigo--text text--accent-3 text-caption" href="/signup">Forgot password?</a>
+    <a class="text-decoration-none indigo--text text--accent-3 text-caption" href="/signup">Forgot
+      password?</a>
   </div>
 
   <v-row justify="space-between" align="center">

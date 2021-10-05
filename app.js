@@ -55,7 +55,6 @@ app.use("/stories", require("./routes/stories"))
 
 // Static folder
 app.use(express.static(path.join(__dirname, "public")))
-app.use(express.static(path.join(__dirname, "views")))
 
 const PORT = process.env.PORT || 3000
 

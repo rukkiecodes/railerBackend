@@ -1,27 +1,30 @@
 <v-card-title class="d-flex justify-center align-center text-h4 white--text">
-  Sign In
+  Sign Up
 </v-card-title>
 
 <v-card-text class="white--text">
-  Complete the form to login
+  Complete the form to register
 </v-card-text>
 
 <v-form>
-  <v-text-field outlined dense prepend-inner-icon="mdi-email" color="deep-purple accent-4" label="Email" required>
+  <v-text-field outlined dense prepend-inner-icon="mdi-email" color="deep-purple accent-4" label="Name" required>
+  </v-text-field>
+
+  <v-text-field outlined dense prepend-inner-icon="mdi-email" color="deep-purple accent-4" label="Email" type="email"
+    required>
   </v-text-field>
 
   <v-text-field outlined dense prepend-inner-icon="mdi-lock" color="deep-purple accent-4" label="password"
     type="password" required></v-text-field>
 
   <div class="d-flex justify-space-between align-center mb-6">
-    <a class="text-decoration-none indigo--text text--accent-3 text-caption" href="/signup">Don't have an account?</a>
-    <a class="text-decoration-none indigo--text text--accent-3 text-caption" href="/signup">Forgot password?</a>
+    <a class="text-decoration-none indigo--text text--accent-3 text-caption" href="/">Already have an account?</a>
   </div>
 
   <v-row justify="space-between" align="center">
     <v-col cols="12" sm="7">
       <v-btn block dark depressed color="deep-purple accent-4">
-        Sign in
+        Sign up
       </v-btn>
     </v-col>
     <v-col cols="12" sm="5">
