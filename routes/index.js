@@ -12,7 +12,7 @@ router.get("/", ensureGuest, (req, res) => {
   })
 })
 
-// @desc Login/Landing page
+// @desc signup
 // @route GET /
 
 router.get("/signup", ensureGuest, (req, res) => {
@@ -21,7 +21,7 @@ router.get("/signup", ensureGuest, (req, res) => {
   })
 })
 
-// @desc Login/Landing page
+// @desc Forgot password
 // @route GET /
 
 router.get("/forgotPassword", ensureGuest, (req, res) => {
@@ -30,10 +30,17 @@ router.get("/forgotPassword", ensureGuest, (req, res) => {
   })
 })
 
+// @desc dashboard/template
+// @route GET /
+
+router.get("/dashboard/template", ensureGuest, (req, res) => {
+  res.render("template")
+})
+
 // @desc Login/Dashboard
 // @route GET / dashboard
 
-router.get("/dashboard", ensureAuth, async (req, res) => {
+router.get("/dashboard", async (req, res) => {
   try {
     const stories = await Story.find({ user: req.user.id }).lean()
     res.render("dashboard", {

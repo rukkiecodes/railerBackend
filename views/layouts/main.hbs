@@ -16,7 +16,7 @@
 <body>
   <v-app id="main">
     {{>_header}}
-      {{>_add_btn}}
+    {{>_drawer}}
     <v-main>
       <v-container fluid>
         {{{body}}}
@@ -30,7 +30,18 @@
   <script>
     new Vue({
       el: '#main',
-      vuetify: new Vuetify(),
+      data: {
+        drawer: true,
+        routes: [
+          { title: 'Template', icon: 'mdi-view-dashboard', to: '/dashboard/template', location: window.location.pathname },
+          { title: 'Copy', icon: 'mdi-content-copy', to: '/dashboard/copy', location: window.location.pathname },
+          { title: 'Email editor', icon: 'mdi-view-compact', to: '/dashboard/emailEditor', location: window.location.pathname },
+          { title: 'Compose template', icon: 'mdi-code-json', to: '/dashboard/codeEditor', location: window.location.pathname },
+        ],
+      },
+      vuetify: new Vuetify({
+        theme: { dark: true },
+      }),
     })
   </script>
 </body>
