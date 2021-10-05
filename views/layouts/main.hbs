@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link href="/style/lib/roboto.css" rel="stylesheet">
   <link href="/style/lib/icon/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="/style/lib/vuetify.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="/style/css/main.css">
+  <link rel="stylesheet" href="/style/css/template.css">
   <title>Railer</title>
 </head>
 
@@ -33,10 +34,10 @@
       data: {
         drawer: true,
         routes: [
-          { title: 'Template', icon: 'mdi-view-dashboard', to: '/dashboard/template', location: window.location.pathname },
-          { title: 'Copy', icon: 'mdi-content-copy', to: '/dashboard/copy', location: window.location.pathname },
-          { title: 'Email editor', icon: 'mdi-view-compact', to: '/dashboard/emailEditor', location: window.location.pathname },
-          { title: 'Compose template', icon: 'mdi-code-json', to: '/dashboard/codeEditor', location: window.location.pathname },
+          { title: 'Template', icon: 'mdi-view-dashboard', to: '/template', location: window.location.pathname },
+          { title: 'Copy', icon: 'mdi-content-copy', to: '/copy', location: window.location.pathname },
+          { title: 'Email editor', icon: 'mdi-view-compact', to: '/emailEditor', location: window.location.pathname },
+          { title: 'Compose template', icon: 'mdi-code-json', to: '/codeEditor', location: window.location.pathname },
         ],
       },
       vuetify: new Vuetify({

@@ -51,10 +51,10 @@ app.use(passport.session())
 // Routes
 app.use("/", require("./routes/index"))
 app.use("/auth", require("./routes/auth"))
-app.use("/stories", require("./routes/stories"))
 
 // Static folder
 app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "uploads")))
 
 const PORT = process.env.PORT || 3000
 

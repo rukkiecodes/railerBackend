@@ -2,12 +2,13 @@ const express = require("express")
 const router = express.Router()
 const { ensureAuth, ensureGuest } = require("../middlewares/auth")
 const Story = require("../models/Story")
+const fs = require("fs")
 
 // @desc Login/Landing page
 // @route GET /
 
 router.get("/", ensureGuest, (req, res) => {
-  res.render("login", {
+  res.render("auth/login", {
     layout: "login",
   })
 })
@@ -16,7 +17,7 @@ router.get("/", ensureGuest, (req, res) => {
 // @route GET /
 
 router.get("/signup", ensureGuest, (req, res) => {
-  res.render("signup", {
+  res.render("auth/signup", {
     layout: "signup",
   })
 })
@@ -25,7 +26,7 @@ router.get("/signup", ensureGuest, (req, res) => {
 // @route GET /
 
 router.get("/forgotPassword", ensureGuest, (req, res) => {
-  res.render("forgotPassword", {
+  res.render("auth/forgotPassword", {
     layout: "forgotPassword",
   })
 })
@@ -33,25 +34,12 @@ router.get("/forgotPassword", ensureGuest, (req, res) => {
 // @desc dashboard/template
 // @route GET /
 
-router.get("/dashboard/template", ensureGuest, (req, res) => {
-  res.render("template")
-})
-
-// @desc Login/Dashboard
-// @route GET / dashboard
-
-router.get("/dashboard", async (req, res) => {
-  try {
-    const stories = await Story.find({ user: req.user.id }).lean()
-    res.render("dashboard", {
-      // @ts-ignore
-      name: req.user.firstName,
-      stories,
-    })
-  } catch (error) {
-    console.error(error)
-    res.render("error/500")
-  }
+router.get("/template", (req, res) => {
+  const templates = JSON.parse(fs.readFileSync("templates.json", "utf8"))
+  console.log(templates)
+  res.render("template", {
+    templates
+  })
 })
 
 module.exports = router

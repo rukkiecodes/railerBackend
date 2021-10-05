@@ -1,4 +1,7 @@
-<v-container>
-  <h6>Dashboard</h6>
-  <p>Here are your stories</p>
+<v-container class='cards'>
+  {{#each templates}}
+  <v-card class="card mb-4 rounded-lg">
+    <v-img class="rounded-lg" src="{{image}}" />
+  </v-card>
+  {{/each}}
 </v-container>

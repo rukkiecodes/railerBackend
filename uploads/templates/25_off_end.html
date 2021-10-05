@@ -1,0 +1,566 @@
+
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="utf-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <style type="text/css">
+                      @font-face {
+                      font-family: 'Baskerville';
+                      src: url('http://media.agjeans.com/7938/Shared/fonts/baskvill-webfont.eot');
+                      src: url('http://media.agjeans.com/7938/Shared/fonts/baskvill-webfont.eot?#iefix') format('embedded-opentype'),  url('http://media.agjeans.com/7938/Shared/fonts/baskvill-webfont.woff2') format('woff2'),  url('http://media.agjeans.com/7938/Shared/fonts/baskvill-webfont.woff') format('woff'),  url('http://media.agjeans.com/7938/Shared/fonts/baskvill-webfont.ttf') format('truetype');
+                      font-weight: normal;
+                      font-style: normal;
+                      }
+                      @font-face {
+                      font-family: 'Avenir Light';
+                      src: url('http://media.agjeans.com/7938/Shared/fonts/Avenir-Light.eot');
+                      src: url('http://media.agjeans.com/7938/Shared/fonts/Avenir-Light.eot?#iefix') format('embedded-opentype'),  url('http://media.agjeans.com/7938/Shared/fonts/Avenir-Light.woff2') format('woff2'),  url('http://media.agjeans.com/7938/Shared/fonts/Avenir-Light.woff') format('woff'),  url('http://media.agjeans.com/7938/Shared/fonts/Avenir-Light.ttf') format('truetype');
+                      font-weight: normal;
+                      font-style: normal;
+                      }
+                      /* Google Fonts */
+                      @media screen and (-webkit-min-device-pixel-ratio:0) {
+                      /* Webkit styles */
+                      .Baskerville {
+                      font-family: 'Baskerville', serif !important;
+                      }
+                      .Baskerville strong {
+                      font-weight: 700 !important;
+                      }
+                      .Baskerville.regular strong {
+                      font-weight: 400 !important;
+                      }
+                      }
+                      @-moz-document url-prefix() {
+                      /* Firefox styles */
+                      .Baskerville {
+                      font-family: 'Baskerville', serif !important;
+                      }
+                      .Baskerville strong {
+                      font-weight: 700!important;
+                      }
+                      .Baskerville.regular strong {
+                      font-weight: 400 !important;
+                      }
+                      }
+                      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                      /* IE10+ styles */
+                      .Baskerville {
+                      font-family: 'Baskerville', serif !important;
+                      }
+                      .Baskerville strong {
+                      font-weight: 700 !important;
+                      }
+                      .Baskerville.regular strong {
+                      font-weight: 400 !important;
+                      }
+                      }
+                      /* Google Fonts */
+                      @media screen and (-webkit-min-device-pixel-ratio:0) {
+                      /* Webkit styles */
+                      .Avenir {
+                      font-family: 'Avenir Light', sans-serif !important;
+                      }
+                      .Avenir strong {
+                      font-weight: 700 !important;
+                      }
+                      .Avenir.regular strong {
+                      font-weight: 300 !important;
+                      }
+                      }
+                      @-moz-document url-prefix() {
+                      /* Firefox styles */
+                      .Avenir {
+                      font-family: 'Avenir Light', sans-serif !important;
+                      }
+                      .Avenir strong {
+                      font-weight: 700!important;
+                      }
+                      .Avenir.regular strong {
+                      font-weight: 300 !important;
+                      }
+                      }
+                      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                      /* IE10+ styles */
+                      .Avenir {
+                      font-family: 'Avenir Light', sans-serif !important;
+                      }
+                      .Avenir strong {
+                      font-weight: 700 !important;
+                      }
+                      .Avenir.regular strong {
+                      font-weight: 300 !important;
+                      }
+                      }
+                      /* Reset Styles */
+                      #outlook a {
+                      padding: 0;
+                      }
+                      body {
+                      width: 100% !important;
+                      -webkit-text-size-adjust: none;
+                      -ms-text-size-adjust: none;
+                      margin: 0;
+                      padding: 0;
+                      }
+                      .ReadMsgBody {
+                      width: 100%;
+                      }
+                      .ExternalClass {
+                      width: 100%;
+                      }
+                      .backgroundTable {
+                      margin: 0 auto;
+                      padding: 0;
+                      width: 100% !important;
+                      }
+                      table td {
+                      border-collapse: collapse;
+                      }
+                      .ExternalClass * {
+                      line-height: 115%;
+                      }
+                      /* Mobile Styles */
+                      @media only screen and (max-width : 480px) {
+                      /********** CUSTOM STYLES ***********/
+                      .mobileStack th {
+                      width: 100% !important;
+                      display: block !important;
+                      }
+                      .mobileLogo { width: 45px !important; }
+                      .qty:before {
+                      content: "QTY: "
+                      }
+                      .cost:before {
+                      content: "COST: "
+                      }
+                      /****** Add Custom Styles Here ******/
+                      /* General Styles */
+                      .container {
+                      width: 100% !important;
+                      overflow: hidden;
+                      }
+                      .mobileHide {
+                      display: none !important;
+                      }
+                      .displayInlineBlock {
+                      display: inline-block;
+                      }
+                      .fullWidth {
+                      width: 100% !important;
+                      height: auto;
+                      }
+                      .halfWidth {
+                      width: 50% !important;
+                      height: auto;
+                      }
+                      .floatLeft {
+                      float: left;
+                      }
+                      .floatRight {
+                      float: right;
+                      }
+                      .heightAuto {
+                      height: auto;
+                      }
+                      /* Images */
+                      .fullWidthImg img {
+                      width: 100% !important;
+                      height: auto;
+                      }
+                      .fullImg {
+                      width: 100% !important;
+                      }
+                      /* Buttons */
+                      .fullWidthBtn {
+                      width: 100% !important;
+                      height: auto;
+                      border-left: 0 none !important;
+                      border-right: 0 none !important;
+                      padding-left: 0 !important;
+                      padding-right: 0 !important;
+                      }
+                      /* Text */
+                      .mobileAlignCenter {
+                      text-align: center !important;
+                      margin: auto;
+                      float: none;
+                      }
+                      .mobileAlignLeft {
+                      text-align: left !important;
+                      }
+                      .copy13 {
+                      font-size: 13px !important;
+                      line-height: 1.5 !important;
+                      }
+                      .copy14 {
+                      font-size: 14px !important;
+                      line-height: 1.5 !important;
+                      }
+                      .copy16 {
+                      font-size: 16px !important;
+                      line-height: 1.5 !important;
+                      }
+                      .copy18 {
+                      font-size: 18px !important;
+                      line-height: 1.5 !important;
+                      }
+                      .copy21 {
+                      font-size: 21px !important;
+                      line-height: 1.5 !important;
+                      }
+                      .copy24 {
+                      font-size: 24px !important;
+                      line-height: 1.5 !important;
+                      }
+                      .copy30 {
+                      font-size: 30px !important;
+                      line-height: 1.5 !important;
+                      }
+                      /* Borders */
+                      .borderTop {
+                      border-top: 1px solid #cccccc;
+                      }
+                      .borderTopBold {
+                      border-top: 2px solid #559EBF;
+                      }
+                      .borderBottom {
+                      border-bottom: 1px solid #cccccc;
+                      }
+                      .borderBottomBold {
+                      border-bottom: 2px solid #559EBF;
+                      }
+                      .borderNone {
+                      border: 0 none !important;
+                      }
+                      .borderTopNone {
+                      border-top: 0 none !important;
+                      }
+                      .borderRightNone {
+                      border-right: 0 none !important;
+                      }
+                      .borderBottomNone {
+                      border-bottom: 0 none !important;
+                      }
+                      .borderLeftNone {
+                      border-left: 0 none !important;
+                      }
+                      /* Padding */
+                      .contentPadding {
+                      padding-left: 10px !important;
+                      padding-right: 10px !important;
+                      }
+                      .contentPadding20 {
+                      padding-left: 20px !important;
+                      padding-right: 20px !important;
+                      }
+                      .paddingNone {
+                      padding: 0 !important;
+                      }
+                      .paddingLeft0 {
+                      padding-left: 0 !important;
+                      }
+                      .paddingRight0 {
+                      padding-right: 0 !important;
+                      }
+                      .paddingTop0 {
+                      padding-top: 0 !important;
+                      }
+                      .paddingTop2 {
+                      padding-top: 2px !important;
+                      }
+                      .paddingTop5 {
+                      padding-top: 5px !important;
+                      }
+                      .paddingTop10 {
+                      padding-top: 10px !important;
+                      }
+                      .paddingTop15 {
+                      padding-top: 15px !important;
+                      }
+                      .paddingTop20 {
+                      padding-top: 20px !important;
+                      }
+                      .paddingTop25 {
+                      padding-top: 25px !important;
+                      }
+                      .paddingTop30 {
+                      padding-top: 30px !important;
+                      }
+                      .paddingBottom0 {
+                      padding-bottom: 0 !important;
+                      }
+                      .paddingBottom2 {
+                      padding-bottom: 2px !important;
+                      }
+                      .paddingBottom5 {
+                      padding-bottom: 5px !important;
+                      }
+                      .paddingBottom10 {
+                      padding-bottom: 10px !important;
+                      }
+                      .paddingBottom15 {
+                      padding-bottom: 15px !important;
+                      }
+                      .paddingBottom20 {
+                      padding-bottom: 20px !important;
+                      }
+                      .paddingBottom25 {
+                      padding-bottom: 25px !important;
+                      }
+                      .paddingBottom30 {
+                      padding-bottom: 30px !important;
+                      }
+                      /* Mobile Show */
+                      .mobileShow, .mobileShow tbody, .mobileShow tr, .mobileShow td {
+                      width: 100% !important;
+                      max-height: inherit !important;
+                      overflow: visible !important;
+                      display: block !important;
+                      float: none !important;
+                      }
+                      .mobileShow table {
+                      display: table !important;
+                      width: 100% !important;
+                      }
+                      .mobileShow tbody {
+                      display: table !important;
+                      }
+                      .mobileShow tr {
+                      display: table-row !important;
+                      }
+                      .mobileShow td {
+                      display: table-cell !important;
+                      }
+                      /* Reset Styles */
+                      body {
+                      margin: 0 !important;
+                      }
+                      div[style*="margin: 16px 0"] {
+                      margin: 0 !important;
+                      }
+                      }
+                  </style>
+              </head>
+              <body style="zoom: 100%;">
+          <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">Your friendly reminder to shop and save</div>
+          <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+          &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+          
+                  <table width="100%" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+                          <tr>
+                              <td class="paddingLeft0 paddingRight0" align="center" style="padding:0 10px;">
+                              <table class="container" width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+                                  <tbody>
+                                      <tr>
+                                          <td class="paddingTop0" align="center" style="padding-top:20px;"><!-- Preheader -->
+                                          <table class="mobileHide" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td style="font-family:Arial, Helvetica, sans-serif;font-size:11px; color:#666666; text-align:left; padding:20px 0;"> </td>
+                                                      <td style="font-family:Arial, Helvetica, sans-serif;font-size:11px; color:#666666; text-align:right; padding:20px 0;"><a href="http://email.agjeans.com/q/DTTexYtuZp8bVDTHUmWMJAnQIi2GjQz3kGIbPkSEScu4FqzQTLZm9ZpqB" title="View in Browser" target="_blank" style="color:#666666; text-decoration:underline;"><strong style="font-weight:normal;">View in Browser</strong></a></td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Preheader END -->
+                                          <!-- Containing Table -->
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <!-- Hero 1-->
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/mGBmHTqqkDzMFoQ0XwEw6wGfDQVKt6gVSQBZcOJamFuZUBlbWFpbC1jb3BL5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gqZk6L2YScKqUoAiu6LtxNqCROg" title="25&#37; Off Everything. Use Code FF25" target="_blank"><img src="http://i1.adis.ws/i/AG/5.19-FFSaleW_01a?qlt=95" alt="25&#37; Off Everything. Use Code FF25" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+          
+                                      <!-- Hero 1-->
+                              
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/ffcRnHUc1wOEOOH0XXrkHR3Ehd1v8ZswXFsZcOJamFuZUBlbWFpLbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gtxMvHBSgcbfbPOrnxiNBor4bLw" title="Friends &amp; Family Event. Shop Now. Online and In-Store" target="_blank"><img src="http://i1.adis.ws/i/AG/5.19-FFSale_02?qlt=95" alt="Friends &amp; Family Event. Shop Now. Online and In-Store" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+                                              <!-- Hero 1-->
+                              
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/bYLfCWmaCkaNy8x0XCm9QkR6s0lcK2nbUC9ZcOJamFuZUBlLbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gY9r_PIfOfobqeV-3M1OKYGrS_w" title="New Arrivals" target="_blank"><img src="http://i1.adis.ws/i/AG/5.16-FFSaleVIPaccess_03?qlt=95" alt="New Arrivals" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+                                              <!-- Hero 1-->
+                              
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/saMUgjAJOcwvBgk0Xl0r7gYIAKxD49Ti0P6ZcOJamFuZUBlbWFpbC1jb3B5LmZyZLWVzaG9waWZ5dG9vbHMuY29tw4gJg-eypyodoeEr8PmIh23tS8Hng" title="Best Sellers" target="_blank"><img src="http://i1.adis.ws/i/AG/5.16-FFSaleVIPaccess_04?qlt=95" alt="Best Sellers" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+                                              <!-- Hero 1-->
+                              
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/ZXHEV0w_0k29DM50XbKc_tdajSjqyzvhPF9ZcOJamFuZULBlbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gkU2WpFrvfbV99t_7j2Icv5hFlg" title="Womens" target="_blank"><img src="http://i1.adis.ws/i/AG/5.16-FFSaleVIPaccess_05?qlt=95" alt="Womens" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+                                                                      
+                                              <!-- Hero 1-->
+                              
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/09q_hTiiJ8LOUBy40XoIAqG9Bfp1pSf854hbZcOJamFuZUBlbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4g4hC9RxyPfI-i0tIWbNwxdOsYvQ" title="Men" target="_blank"><img src="http://i1.adis.ws/i/AG/5.16-FFSaleVIPaccess_06?qlt=95" alt="Men" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+                                                                      
+                                              <!-- Hero 1-->
+                              
+                                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="fullWidthImg" align="center" style="">
+                                                      <a href="http://email.agjeans.com/q/gTkYPYDHD7Ta2nF0X08ttZiPe_9AHiixT0YZcOJamFuZUBlbWFpbLC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gBmyqLtN0dp9kuSwNtt25HA9kqg" title="Kids" target="_blank"><img src="http://i1.adis.ws/i/AG/5.16-FFSaleVIPaccess_07?qlt=95" alt="Kids" width="660" border="0" style="display:block;"></a>
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Hero 1 END-->
+                                          <!-- Footer -->
+                                          <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                              <tbody>
+                                                  <tr>
+                                                      <td class="" align="center"><!-- Headline -->
+                                                      <table cellspacing="0" cellpadding="0" align="center" width="100%" border="0">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td class="contentPadding20 copy16 Baskerville" style="font-family:Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif; font-size:17px; color:#a51e36; text-align:center; font-weight: 600; padding:115px 0 2px;letter-spacing:.07em;">Designed in Los Angeles,&nbsp;California.</td>
+                                                              </tr>
+                                                              
+                                                          </tbody>
+                                                      </table>
+                                                      <table cellspacing="0" cellpadding="0" align="center" width="100%" border="0">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td class="Avenir regular" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#939393; text-align:center; font-weight:normal; padding:10px 0 2px;letter-spacing:.29em;">FREE U.S. SHIPPING &amp; EASY RETURNS</td>
+                                                              </tr>
+                                                              
+                                                          </tbody>
+                                                      </table>
+                                                      <!-- Headline END -->
+                                                      <!-- Navigation -->
+                                                      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td class="paddingNone" style="padding:0 20px;" align="center">
+                                                                  <table class="fullWidth" cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                      <tbody>
+                                                                          
+                                                                          <tr>
+                                                                              <td class="Avenir regular" style="font-family:Arial, Helvetica, sans-serif;font-size:0px;" align="center"><a href="http://email.agjeans.com/q/lswTGcbNZbHrODl0Xa_Jvqd6ODwrIJ7-IL1ZcOJamFuZUBlbWFpbC1jb3LB5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gGoqvSfFedZ4_WYBzCsMgMxOCrw" title="Womens" width="100%" target="_blank" style="font-size:13px; color:#838383; text-decoration:none; white-space:nowrap; padding:45px 0 10px; border:1px solid #ffffff;box-sizing: border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;display:block;border-bottom:1px solid #d9d9d9;letter-spacing:.28em;text-transform:uppercase;"><strong style="font-weight:normal;">Shop Women</strong></a> </td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                              <td class="Avenir regular" style="font-family:Arial, Helvetica, sans-serif;font-size:0px;" align="center"><a href="http://email.agjeans.com/q/DELycV6-YxnwUWx0X3DeK6_LFxjkBvq18D5FZcOJamFuZUBlbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gyoIQOMlmf5VeTWDCoZ0xKsOKEA" title="Mens" width="100%" target="_blank" style="font-size:13px; color:#838383; text-decoration:none; white-space:nowrap; padding:10px; border:1px solid #ffffff;box-sizing: border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;display:block;border-bottom:1px solid #ffffff;letter-spacing:.28em;text-transform:uppercase;"><strong style="font-weight:normal;">Shop Men</strong></a> </td>
+                                                                          </tr>
+                                                                      </tbody>
+                                                                  </table>
+                                                                  </td>
+                                                              </tr>
+                                                          </tbody>
+                                                      </table>
+                                                      <!-- Navigation END -->
+                                                      
+                                                      <table class="fullWidth" cellspacing="0" cellpadding="0" align="center" border="0">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td class="Avenir regular" style="font-family:Arial, Helvetica, sans-serif; font-size:10.5px; line-height:20px; color:#848484; padding:30px 0px 0px 0px; text-align:center;letter-spacing:.30em;">
+                                                                  AG ADRIANO GOLDSCHMIED <br>
+                                                                  <span class="Baskerville" style="color:#a3a3a3;font-family:Baskerville, 'Baskerville Old Face', serif; font-size:11px; font-style:italic; font-weight:500; letter-spacing:.1em;">&copy; 2018 AG Jeans. All Rights Reserved. </span>
+                                                                  </td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td class="Avenir regular" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; line-height:10px; color:#a3a3a3; padding:9px 10px 10px 10px; text-align:center;letter-spacing:.1em;">
+                                                                  <a href="http://email.agjeans.com/q/1rSJf5LRd7jLy9UR0XlQj-rF-6T_l5LPzN2cZcOJamFuZUBlbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gFaSjbY9BfKeGhfCLhTmfgBysow" title="2741 Seminole Ave, South Gate CA 90280" target="_blank" style="color:#a3a3a3;text-decoration:none;">2741 Seminole Ave, South Gate CA 90280</a>
+                                                                  <br>
+                                                                  <br>
+                                                                  <a href="http://email.agjeans.com/q/USGd6d5pzOUjzhs0XjJI1a5V-Rbr2N-OJP8ZcOJaLmFuZUBlbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gFrIqWXNfcqk91GMkUUp2fh-6Kg" title="Privacy Policy" target="_blank" style="color:#a3a3a3; text-decoration:underline;"><strong style="font-weight:normal;">Privacy Policy</strong></a> | <a href="http://email.agjeans.com/q/M4LGF_if9lYaocUN0X0_SqVYs-aIaOD31MKauxFkhwLjXCABMdqHI9lCw" title="Unsubscribe" target="_blank" style="color:#a3a3a3; text-decoration:underline;"><strong style="font-weight:normal">Unsubscribe</strong></a><p>&nbsp;</p>
+                                                                  <p>Terms and Conditions<p style="text-align:justify">The Friends &amp; Family 2018 Online Promotion &#40;&#34;Online Promotion&#34;&#41; is valid for online VIP Members from 05&#47;16&#47;2018-05&#47;21&#47;2018 at 11&#58;59 p.m. PST, and for all other online customers from 05&#47;17&#47;2018-05&#47;21&#47;2018 at 11&#58;59 p.m. PST &#40;the &#34;Redemption Period&#34;&#41;. This Online Promotion is valid online only at <a href="http://email.agjeans.com/q/Qpfw6w4yrrl_NJw0X9uvRSixbgnlqMi6QlUZLcOJamFuZUBlbWFpbC1jb3B5LmZyZWVzaG9waWZ5dG9vbHMuY29tw4gm-J_FAvtfZr94L5NvpWMZZLqfw" style="color:#a3a3a3; text-decoration:underline;">www.agjeans.com</a> for shipments within the 50 United States and Washington D.C. &#40;Void where prohibited by law&#41;. During the Redemption period, redeem the Friends &amp; Family 2018 Online Promotion using the promotional code &#34;FF25&#34; during checkout to receive 25&#37; off your purchase. Discount is not valid on gift certificates and will only apply to merchandise retail price&#40;s&#41; before taxes
+           and any applicable shipping charges. The Discount may not be combined with any other offer, discounts or promotions at time of redemption. No price adjustments on previous purchases. Prices and the Discount are subject to change at any time during the Online Promotion, with or without notice. This Online Promotion is subject to cancellation at any time with or without notice.</p>
+                                                                      
+                                                                  <!-- MOBILE Browser Link -->
+                                                                  <table class="mobileShow" cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                      <tbody>
+                                                                          <tr style="mso-hide:all; width:0; max-height:0; overflow:hidden; display:none; float:left;">
+                                                                              <td style="padding-top:20px;" align="center"><a href="http://email.agjeans.com/q/omzzvl46S268LGmUJP3yGQrblYPafhhTw488P6Uh1mMNtyfQb36gxS2yk" title="View in browser" target="_blank" style="color:#a3a3a3;"><strong style="font-weight:normal;">View in Browser</strong></a></td>
+                                                                          </tr>
+                                                                      </tbody>
+                                                                  </table>
+                                                                  <!-- MOBILE Browser Link  END--></td>
+                                                              </tr>
+                                                          </tbody>
+                                                      </table>
+                                                      <!-- Social Icons END--></td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                          <!-- Footer END -->
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              <!-- Containing Table END-->
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <!-- Gmail Fix-->
+                  <table class="mobileHide" width="650" align="center" cellpadding="0" cellspacing="0" border="0" style="display:none; width:650px; min-width:650px; max-width:650px;">
+                      <tbody>
+                          <tr>
+                              <td><img src="http://media.agjeans.com/1/Shared/2014/LCS/Boilerplate/spacer.gif" width="650" height="20" border="0" style="display: block; min-width: 650px; max-width: 650px;"></td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+                  <!-- Gmail Fix END -->
+              
+          <img src="http://email.agjeans.com/q/5ntTXJ0ihgKII590bQ6MlAlsPHaoOGVfib" alt="" width="20" height="1"></body>
+          </html>
+          
+                  
