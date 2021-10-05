@@ -8,8 +8,9 @@ const passport = require("passport")
 const session = require("express-session")
 const MongoStore = require("connect-mongo")
 const connectDB = require("./config/db")
-const livereload = require("livereload")
-const connectLivereload = require("connect-livereload")
+const reload = require("reload")
+// const livereload = require("livereload")
+// const connectLivereload = require("connect-livereload")
 
 // Load config
 dotenv.config({ path: "./config/config.env" })
@@ -21,18 +22,18 @@ connectDB()
 
 const publicDirectory = path.join(__dirname, "public")
 const viewsDirectory = path.join(__dirname, "views")
-const livereloadServer = livereload.createServer()
-livereloadServer.watch([publicDirectory, viewsDirectory])
+// const livereloadServer = livereload.createServer()
+// livereloadServer.watch([publicDirectory, viewsDirectory])
 
-livereloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    livereloadServer.refresh("/")
-  }, 100)
-})
+// livereloadServer.server.once("connection", () => {
+//   setTimeout(() => {
+//     livereloadServer.refresh("/")
+//   }, 100)
+// })
 
 const app = express()
 
-app.use(connectLivereload())
+// app.use(connectLivereload())
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"))
@@ -72,3 +73,4 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () =>
   console.log(`App running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 )
+reload(app)

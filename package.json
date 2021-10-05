@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
-    "dev": "cross-env NODE_ENV=development nodemon app --ext js,mhs,json,hbs"
+    "dev": "cross-env NODE_ENV=development nodemon app --ext js,mhs,json,hbs,css"
   },
   "repository": {
     "type": "git",
@@ -19,20 +19,19 @@
   },
   "homepage": "https://github.com/rukkiecodes/railerBackend#readme",
   "dependencies": {
-    "connect-livereload": "^0.6.1",
     "connect-mongo": "^4.6.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "fs-extra": "^10.0.0",
-    "livereload": "^0.9.3",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
     "mongoose": "^6.0.8",
     "morgan": "^1.10.0",
     "passport": "^0.5.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "reload": "^3.2.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
