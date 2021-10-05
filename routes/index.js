@@ -21,6 +21,15 @@ router.get("/signup", ensureGuest, (req, res) => {
   })
 })
 
+// @desc Login/Landing page
+// @route GET /
+
+router.get("/forgotPassword", ensureGuest, (req, res) => {
+  res.render("forgotPassword", {
+    layout: "forgotPassword",
+  })
+})
+
 // @desc Login/Dashboard
 // @route GET / dashboard
 
