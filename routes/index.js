@@ -8,7 +8,7 @@ const fs = require("fs")
 // @route GET /
 
 router.get("/", ensureGuest, (req, res) => {
-  res.render("auth/login", {
+  res.render("components/auth/login", {
     layout: "login",
   })
 })
@@ -17,7 +17,7 @@ router.get("/", ensureGuest, (req, res) => {
 // @route GET /signup
 
 router.get("/signup", ensureGuest, (req, res) => {
-  res.render("auth/signup", {
+  res.render("components/auth/signup", {
     layout: "signup",
   })
 })
@@ -26,7 +26,7 @@ router.get("/signup", ensureGuest, (req, res) => {
 // @route GET /forgotPassword
 
 router.get("/forgotPassword", ensureGuest, (req, res) => {
-  res.render("auth/forgotPassword", {
+  res.render("components/auth/forgotPassword", {
     layout: "forgotPassword",
   })
 })
@@ -36,8 +36,8 @@ router.get("/forgotPassword", ensureGuest, (req, res) => {
 
 router.get("/template", (req, res) => {
   const templates = JSON.parse(fs.readFileSync("templates.json", "utf8"))
-  res.render("template", {
-    templates
+  res.render("components/template", {
+    templates,
   })
 })
 
@@ -45,14 +45,14 @@ router.get("/template", (req, res) => {
 // @route GET /template
 
 router.get("/codeEditor", (req, res) => {
-  res.render("codeEditor")
+  res.render("components/codeEditor")
 })
 
 // @desc emailEditor page
 // @route GET /template
 
 router.get("/emailEditor", (req, res) => {
-  res.render("emailEditor")
+  res.render("components/emailEditor")
 })
 
 module.exports = router
