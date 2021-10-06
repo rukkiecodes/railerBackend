@@ -2,6 +2,10 @@
   {{#each templates}}
   <v-card class="card mb-4 rounded-lg">
     <v-img class="rounded-lg" src="{{image}}" />
+    <v-card class="overlay pa-2">
+      <v-btn color="grey" class="text-capitalize" depressed block small dense>Preview</v-btn>
+      <v-btn color="deep-purple accent-4" class="text-capitalize mt-4" depressed block small dense>Get started</v-btn>
+    </v-card>
   </v-card>
   {{/each}}
 </v-container>
