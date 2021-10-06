@@ -9,6 +9,7 @@
   <link href="/style/lib/roboto.css" rel="stylesheet">
   <link href="/style/lib/icon/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="/style/lib/vuetify.min.css" rel="stylesheet">
+  <link href="/style/lib/grapes.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style/css/main.css">
   <link rel="stylesheet" href="/style/css/template.css">
   <title>Railer</title>
@@ -24,6 +25,9 @@
       </v-container>
     </v-main>
   </v-app>
+
+  {{!-- Import grapes --}}
+  <script src="/script/grapes.min.js"></script>
 
   {{!-- Import ace scripts --}}
   <script src="/script/ace/src-min/ace.js"></script>
@@ -52,24 +56,32 @@
       }),
     })
 
-    let codeEditor = ace.edit("editorCode")
+    if (window.location.pathname == "/codeEditor") {
+      let codeEditor = ace.edit("editorCode")
 
-    let editorLib = {
-      init() {
-        codeEditor.setTheme("ace/theme/dracula")
+      let editorLib = {
+        init() {
+          codeEditor.setTheme("ace/theme/dracula")
 
-        codeEditor.session.setMode("ace/mode/html")
+          codeEditor.session.setMode("ace/mode/html")
 
-        codeEditor.setOptions({
-          fontFamily: 'Victor mono',
-          fontSize: '11pt',
-          enableBasicAutocompletion: true,
-          enableLiveAutocompletion: true,
-          enabeEmmet: true
-        })
+          codeEditor.setOptions({
+            fontFamily: 'Victor mono',
+            fontSize: '11pt',
+            enableBasicAutocompletion: true,
+            enableLiveAutocompletion: true,
+            enabeEmmet: true
+          })
+        }
       }
+      editorLib.init()
     }
-    editorLib.init()
+
+    if (window.location.pathname == "/emailEditor") {
+      const editor = grapesjs.init({
+        container: "#gjs",
+      });
+    }
   </script>
 </body>
 
