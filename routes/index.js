@@ -14,7 +14,7 @@ router.get("/", ensureGuest, (req, res) => {
 })
 
 // @desc signup
-// @route GET /
+// @route GET /signup
 
 router.get("/signup", ensureGuest, (req, res) => {
   res.render("auth/signup", {
@@ -23,7 +23,7 @@ router.get("/signup", ensureGuest, (req, res) => {
 })
 
 // @desc Forgot password
-// @route GET /
+// @route GET /forgotPassword
 
 router.get("/forgotPassword", ensureGuest, (req, res) => {
   res.render("auth/forgotPassword", {
@@ -31,15 +31,28 @@ router.get("/forgotPassword", ensureGuest, (req, res) => {
   })
 })
 
-// @desc dashboard/template
-// @route GET /
+// @desc template page
+// @route GET /template
 
 router.get("/template", (req, res) => {
   const templates = JSON.parse(fs.readFileSync("templates.json", "utf8"))
-  console.log(templates)
   res.render("template", {
     templates
   })
+})
+
+// @desc codeEditor page
+// @route GET /template
+
+router.get("/codeEditor", (req, res) => {
+  res.render("codeEditor")
+})
+
+// @desc emailEditor page
+// @route GET /template
+
+router.get("/emailEditor", (req, res) => {
+  res.render("emailEditor")
 })
 
 module.exports = router

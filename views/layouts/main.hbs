@@ -19,14 +19,21 @@
     {{>_header}}
     {{>_drawer}}
     <v-main>
-      <v-container fluid>
+      <v-container class="pa-0" fluid>
         {{{body}}}
       </v-container>
     </v-main>
   </v-app>
 
+  {{!-- Import ace scripts --}}
+  <script src="/script/ace/src-min/ace.js"></script>
+  <script src="/script/ace/src-min/mode-javascript.js"></script>
+  <script src="/script/ace/src-min/ext-emmet.js"></script>
+  <script src="/script/ace/src-min/ext-language_tools.js"></script>
+
   <script src="/script/vue.js"></script>
   <script src="/script/vuetify.js"></script>
+
   <script src="/reload/reload.js"></script>
   <script>
     new Vue({
@@ -44,6 +51,25 @@
         theme: { dark: true },
       }),
     })
+
+    let codeEditor = ace.edit("editorCode")
+
+    let editorLib = {
+      init() {
+        codeEditor.setTheme("ace/theme/dracula")
+
+        codeEditor.session.setMode("ace/mode/html")
+
+        codeEditor.setOptions({
+          fontFamily: 'Victor mono',
+          fontSize: '11pt',
+          enableBasicAutocompletion: true,
+          enableLiveAutocompletion: true,
+          enabeEmmet: true
+        })
+      }
+    }
+    editorLib.init()
   </script>
 </body>
 
