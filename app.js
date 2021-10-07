@@ -51,7 +51,8 @@ app.use(passport.session())
 // Routes
 app.use("/", require("./routes/index"))
 app.use("/auth", require("./routes/auth"))
-app.use("/userSignup", require("./routes/userSignup"))
+app.use("/register", require("./routes/register"))
+app.use("/login", require("./routes/login"))
 
 // Static folder
 app.use(express.static(path.join(__dirname, "public")))

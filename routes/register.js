@@ -30,6 +30,7 @@ router.post("/", async (req, res) => {
                 email: req.body.email,
                 password: hash,
               })
+              res.redirect("/template")
             }
           })
         }
