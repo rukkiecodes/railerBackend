@@ -1,11 +1,24 @@
 <v-container fluid class='cards'>
   {{#each templates}}
-  <v-card class="card mb-4 rounded-lg">
-    <v-img class="rounded-lg" src="{{image}}" />
-    <v-card class="overlay pa-2">
-      <v-btn color="grey" class="text-capitalize" depressed block small dense>Preview</v-btn>
-      <v-btn color="deep-purple accent-4" class="text-capitalize mt-4" depressed block small dense>Get started</v-btn>
+  <v-hover v-slot="{ hover }">
+    <v-card class="card mb-4 rounded-lg" color="grey lighten-4">
+      <v-img src="{{image}}">
+        <v-expand-transition>
+          <v-card v-if="hover" class="pa-3 transition-fast-in-fast-out v-card--reveal" style="height: 100%;">
+            <v-btn color="deep-purple accent-4" class="text-capitalize" depressed block small dense>Get started
+            </v-btn>
+            <div class="d-flex justify-space-between mt-4">
+              <v-btn color="grey" class="text-capitalize" width="130" depressed small dense>
+                Preview
+              </v-btn>
+              <v-btn color="grey" class="text-capitalize mt-0" depressed x-small plain fab dense>
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+            </div>
+          </v-card>
+        </v-expand-transition>
+      </v-img>
     </v-card>
-  </v-card>
+  </v-hover>
   {{/each}}
 </v-container>

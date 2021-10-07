@@ -17,22 +17,12 @@
   position: relative;
 }
 
-.cards .overlay {
-  position: absolute;
-  overflow: hidden;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  display: none;
-  width: 100%;
-  height: 100%;
-  background: #1e1e1e;
-}
-
-.cards .card:hover .overlay {
-  display: initial;
-}
-
 #gjs {
   border: none;
+}
+
+.v-card--reveal {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
