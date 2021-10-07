@@ -1,7 +1,7 @@
 // @ts-nocheck
 const mongoose = require("mongoose")
 
-const UserSchema = new mongoose.Schema({
+const signupSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -9,4 +9,4 @@ const UserSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 })
 
-module.exports = mongoose.model("Signup", UserSchema)
+module.exports = mongoose.model("Signup", signupSchema)
