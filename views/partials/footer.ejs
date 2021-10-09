@@ -1,0 +1,55 @@
+<script src="/script/vue.js"></script>
+<script src="/script/vuetify.js"></script>
+<script src="/reload/reload.js"></script>
+
+<script>
+  new Vue({
+    el: '#main',
+    data: {
+      drawer: true,
+      routes: [{
+          title: 'Template',
+          icon: 'mdi-view-dashboard',
+          to: '/template',
+          location: window.location.pathname
+        },
+        {
+          title: 'Copy',
+          icon: 'mdi-content-copy',
+          to: '/copy',
+          location: window.location.pathname
+        },
+        {
+          title: 'Email editor',
+          icon: 'mdi-view-compact',
+          to: '/emailEditor',
+          location: window.location.pathname
+        },
+        {
+          title: 'Compose template',
+          icon: 'mdi-code-json',
+          to: '/codeEditor',
+          location: window.location.pathname
+        },
+      ],
+      fav: true,
+      menu: false,
+      message: false,
+      hints: true,
+    },
+    mounted() {
+      const drawerBorder = document.querySelector(".v-navigation-drawer__border")
+      if (drawerBorder) {
+        drawerBorder.style.display = 'none'
+      }
+    },
+    vuetify: new Vuetify({
+      theme: {
+        dark: true
+      },
+    }),
+  })
+</script>
+</body>
+
+</html>

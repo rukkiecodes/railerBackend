@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
-    "dev": "cross-env NODE_ENV=development nodemon app --ext js,mhs,json,hbs,css"
+    "dev": "cross-env NODE_ENV=development nodemon app --ext js,mhs,json,ejs,css"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
@@ -33,7 +34,6 @@
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
     "googleapis": "^88.2.0",
-    "grapesjs": "^0.17.27",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",

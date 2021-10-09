@@ -9,6 +9,7 @@ const session = require("express-session")
 const MongoStore = require("connect-mongo")
 const connectDB = require("./config/db")
 const reload = require("reload")
+const ejs = require("ejs")
 
 // Load config
 dotenv.config({ path: "./config/config.env" })
@@ -28,9 +29,8 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"))
 }
 
-// Handlebars
-app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }))
-app.set("view engine", ".hbs")
+// Template engine
+app.set("view engine", "ejs")
 
 // Session
 app.use(
@@ -62,6 +62,6 @@ app.use(express.static(path.join(__dirname, "uploads")))
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () =>
-  console.log(`App running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+  console.log(`App is running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 )
 reload(app)
