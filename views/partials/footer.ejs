@@ -1,6 +1,10 @@
 <script src="/script/vue.js"></script>
 <script src="/script/vuetify.js"></script>
 <script src="/script/vuesax.min.js"></script>
+<script src="/script/ace/src-min/ace.js"></script>
+<script src="/script/ace/src-min/mode-html.js"></script>
+<script src="/script/emmet.js"></script>
+<script src="/script/ace/src-min/ext-emmet.js"></script>
 <script src="/reload/reload.js"></script>
 
 <script>
@@ -43,7 +47,9 @@
       signupDialog: false,
       email: "",
       password: "",
-      remember: true
+      remember: true,
+      codeEditorWidth: null,
+      codeEditorHeight: null
     },
     mounted() {
       const drawerBorder = document.querySelector(".v-navigation-drawer__border")
@@ -54,6 +60,38 @@
       if (vsSwitch) {
         vsSwitch.style.background = "#121212"
       }
+
+      // Setup ace
+      let codeEditor = ace.edit("codeEditor")
+
+      // Configure ace
+      let editorLib = {
+        init() {
+          // set theme
+          codeEditor.setTheme("ace/theme/dracula")
+
+          // set language mode
+          codeEditor.session.setMode("ace/mode/html")
+
+          // set options
+          codeEditor.setOptions({
+            fontFamily: "Victor mono",
+            fontSize: '12pt',
+            highlightActiveLine: true,
+            highlightSelectedWord: true,
+            cursorStyle: "smooth",
+            behavioursEnabled: true,
+            wrapBehavioursEnabled: true,
+            autoScrollEditorIntoView: true,
+            copyWithEmptySelection: true,
+            useSoftTabs: true,
+            navigateWithinSoftTabs: true,
+            enableMultiselect: true,
+            enableEmmet: true
+          })
+        }
+      }
+      editorLib.init()
     },
     methods: {
       gotoLoggin() {
