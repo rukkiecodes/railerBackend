@@ -23,4 +23,23 @@
       <span v-text="route.title" />
     </v-tooltip>
   </v-list>
+  <template v-slot:append>
+    <v-list dense flat>
+      <v-tooltip top>
+        <template v-slot:activator="{ on, attrs }">
+          <v-list-item class="mb-n1" dense v-bind="attrs" v-on="on" link>
+            <v-list-item-icon>
+              <v-icon>mdi-logout-variant</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>Logout</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+        <span>Logout</span>
+      </v-tooltip>
+    </v-list>
+  </template>
+</v-navigation-drawer>
 </v-navigation-drawer>

@@ -49,7 +49,6 @@ app.use(passport.session())
 app.use("/", require("./routes/index"))
 app.use("/auth", require("./routes/auth"))
 app.use("/register", require("./routes/register"))
-app.use("/login", require("./routes/login"))
 app.use("/profile", require("./routes/profile"))
 
 // Static folder

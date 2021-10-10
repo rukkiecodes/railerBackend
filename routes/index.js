@@ -13,6 +13,27 @@ router.get("/", (req, res) => {
   })
 })
 
+// @desc Copy page
+// @route GET /copy
+
+router.get("/copy", ensureGuest, (req, res) => {
+  res.render("pages/copy")
+})
+
+// @desc email editor page
+// @route GET /emailEditor
+
+router.get("/emailEditor", ensureGuest, (req, res) => {
+  res.render("pages/emailEditor")
+})
+
+// @desc code editor page
+// @route GET /emailEditor
+
+router.get("/codeEditor", ensureGuest, (req, res) => {
+  res.render("pages/codeEditor")
+})
+
 // @desc Login/Landing page
 // @route GET /
 
