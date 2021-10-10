@@ -10,7 +10,7 @@
       drawer: true,
       routes: [{
           title: 'Template',
-          icon: 'mdi-view-dashboard',
+          icon: 'mdi-view-dashboard-outline',
           to: '/',
           location: window.location.pathname
         },
@@ -22,7 +22,7 @@
         },
         {
           title: 'Email editor',
-          icon: 'mdi-view-compact',
+          icon: 'mdi-view-dashboard-variant-outline',
           to: '/emailEditor',
           location: window.location.pathname
         },
@@ -40,6 +40,7 @@
       appMode: true,
       search: "",
       logginDialog: true,
+      signupDialog: false,
       email: "",
       password: "",
       remember: true
@@ -52,6 +53,16 @@
       const vsSwitch = document.querySelector(".vs-switch")
       if (vsSwitch) {
         vsSwitch.style.background = "#121212"
+      }
+    },
+    methods: {
+      gotoLoggin() {
+        this.signupDialog = false
+        this.logginDialog = true
+      },
+      gotoSignup() {
+        this.logginDialog = false
+        this.signupDialog = true
       }
     },
     computed: {

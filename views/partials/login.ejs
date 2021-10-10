@@ -1,17 +1,15 @@
-<v-dialog v-model="logginDialog" persistent width="400">
+<v-dialog v-model="logginDialog" persistent width="380">
   <v-card class="rounded-xl">
-    <v-img class="d-flex justify-center align-start" src="/images/blob.svg">
-      <v-toolbar dense flat color="transparent">
-        <v-spacer></v-spacer>
-        <v-btn @click="logginDialog = false" icon>
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-      </v-toolbar>
-      <v-card-title class="d-flex justify-center align-center mx-auto mb-0 py-0">Sign in</v-card-title>
-      <p class="text-caption text-center">Please complete the for to loggin</p>
-    </v-img>
+    <v-toolbar dense flat color="transparent">
+      <v-spacer></v-spacer>
+      <v-btn @click="logginDialog = false" plain icon>
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-toolbar>
+    <v-card-title class="d-flex justify-center align-center mx-auto mb-0 py-0">Sign in</v-card-title>
+    <p class="text-caption text-center">Please complete the for to loggin</p>
 
-    <v-card-text class="mt-2">
+    <v-card-text class="mt-10">
       <vs-input v-model="email" large color="#ffffff" type="email" block label-placeholder="Email" primary>
         <template #icon>
           <v-icon small>mdi-email-variant</v-icon>
@@ -24,8 +22,9 @@
         </template>
       </vs-input>
     </v-card-text>
-    <v-card-text class="d-flex justify-end align-center py-0">
-      <a class="text-decoration-none" href="/auth/forgotPassword">Forgot password?</a>
+    <v-card-text class="d-flex justify-space-between align-center py-0">
+      <v-btn @click="gotoSignup" class="text-capitalize" plain small text>Don't have an account?</v-btn>
+      <v-btn class="text-capitalize" plain small text>Forgot password?</v-btn>
     </v-card-text>
     <v-card-actions>
       <vs-button color="#6200EA" size="small" block>

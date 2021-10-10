@@ -4,16 +4,12 @@
     <v-img src="<%= template.image %>">
       <v-expand-transition>
         <v-card v-if="hover" class="pa-3 transition-fast-in-fast-out v-card--reveal" style="height: 100%;">
-          <v-btn color="deep-purple accent-4" class="text-capitalize" depressed block small dense>Get started
-          </v-btn>
-          <div class="d-flex justify-space-between mt-4">
-            <v-btn color="grey" class="text-capitalize" width="130" depressed small dense>
-              Preview
-            </v-btn>
-            <v-btn color="grey" class="text-capitalize mt-0" depressed x-small plain fab dense>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-          </div>
+          <vs-button block size="small" color="#6200EA" class="rounded-lg">
+            Get started
+          </vs-button>
+          <vs-button block size="small" color="#757575" class="rounded-lg ">
+            Preview
+          </vs-button>
         </v-card>
       </v-expand-transition>
     </v-img>
