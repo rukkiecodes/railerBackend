@@ -7,19 +7,19 @@
   </template>
 
   <v-card class="rounded-xl">
+    <v-card-title class="text-body-1">Choose a login method</v-card-title>
     <v-card-text>
       <vs-button size="small" href="/auth/google" color="#F44336" block>
         <v-icon left>mdi-google</v-icon>
         Login with Google
       </vs-button>
-      <v-divider inset class="my-5 mx-auto"></v-divider>
-      <vs-button size="small" @click="logginDialog = true" color="#6200EA" block>
-        <v-icon left>mdi-login-variant</v-icon>
-        Already Have an account?
+      <vs-button size="small" href="/auth/google" color="#304FFE" block>
+        <v-icon left>mdi-facebook</v-icon>
+        Login with Facebook
       </vs-button>
-      <vs-button size="small" @click="signupDialog = true" class="mt-3" color="#6200EA" block>
-        <v-icon left>mdi-location-enter</v-icon>
-        Don't Have an account?
+      <vs-button size="small" href="/auth/google" color="#6200EA" block>
+        <v-icon left>mdi-yahoo</v-icon>
+        Login with yahoo
       </vs-button>
     </v-card-text>
   </v-card>
