@@ -1,0 +1,19 @@
+<v-footer class="ml-13 px-2 rounded-tr-xl navfooter d-flex justify-space-between align-center" height="45" width="115"
+  color="#1E2023" fixed padless>
+  <v-tooltip top>
+    <template v-slot:activator="{ on, attrs }">
+      <v-btn color="white" icon dark small v-bind="attrs" v-on="on">
+        <v-icon>mdi-cog-outline</v-icon>
+      </v-btn>
+    </template>
+    <span>Tooltip</span>
+  </v-tooltip>
+  <vs-switch color="deep-purple accent-4" v-model="appMode">
+    <template #off>
+      <v-icon small>mdi-moon-waxing-crescent mdi-rotate-45</v-icon>
+    </template>
+    <template #on>
+      <v-icon small>mdi-weather-sunny</v-icon>
+    </template>
+  </vs-switch>
+</v-footer>
