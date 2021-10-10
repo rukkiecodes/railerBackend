@@ -27,9 +27,11 @@
   width: 100%;
 }
 
+.v-navigation-drawer {
+  border-radius: 0 0 25px 0;
+}
 
 .appbar {
-    /* position: relative !important; */
     background-color: #6200EA !important;
 }
 
