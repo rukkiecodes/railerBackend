@@ -1,19 +1,32 @@
-<v-footer class="ml-13 px-2 rounded-tr-xl navfooter d-flex justify-space-between align-center" height="45" width="115"
-  color="#1E2023" fixed padless>
+<v-footer class="ml-13 pl-1 pr-2 rounded-tr-xl navfooter d-flex justify-space-between align-center" height="45"
+  width="130" color="#1E2023" fixed padless>
   <v-tooltip top>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn color="white" icon dark small v-bind="attrs" v-on="on">
+      <v-btn color="white" icon dark x-small v-bind="attrs" v-on="on">
         <v-icon>mdi-cog-outline</v-icon>
       </v-btn>
     </template>
-    <span>Tooltip</span>
+    <span class="text-caption">Settings</span>
   </v-tooltip>
-  <vs-switch color="deep-purple accent-4" v-model="appMode">
-    <template #off>
-      <v-icon small>mdi-moon-waxing-crescent mdi-rotate-45</v-icon>
+  <v-tooltip top>
+    <template v-slot:activator="{ on, attrs }">
+      <v-btn color="white" class="mx-2" icon dark x-small v-bind="attrs" v-on="on">
+        <v-icon>mdi-syllabary-hiragana</v-icon>
+      </v-btn>
     </template>
-    <template #on>
-      <v-icon small>mdi-weather-sunny</v-icon>
+    <span class="text-caption">Language</span>
+  </v-tooltip>
+  <v-tooltip top>
+    <template v-slot:activator="{ on, attrs }">
+      <vs-switch color="deep-purple accent-4" v-model="appMode" v-bind="attrs" v-on="on">
+        <template #off>
+          <v-icon small>mdi-moon-waxing-crescent mdi-rotate-45</v-icon>
+        </template>
+        <template #on>
+          <v-icon small>mdi-weather-sunny</v-icon>
+        </template>
+      </vs-switch>
     </template>
-  </vs-switch>
+    <span class="text-caption">App theme</span>
+  </v-tooltip>
 </v-footer>

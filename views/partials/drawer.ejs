@@ -6,10 +6,11 @@
       </v-list-item-avatar>
     </v-list-item>
   </v-list>
-  <v-list dense>
+  <v-list dense flat>
     <v-tooltip v-for="(route, i) in routes" :key="i" right>
       <template v-slot:activator="{ on, attrs }">
-        <v-list-item dense v-bind="attrs" v-on="on" :href="route.to" link>
+        <v-list-item dense v-bind="attrs" v-on="on" :href="route.to"
+          :class="{'deep-purple lighten-1 rounded-r-pill': route.to == route.location}" link>
           <v-list-item-icon>
             <v-icon>{{ route.icon }}</v-icon>
           </v-list-item-icon>

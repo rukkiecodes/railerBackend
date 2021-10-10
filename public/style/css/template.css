@@ -49,11 +49,29 @@
 .navfooter:before {
   content: "";
   position: absolute;
-  top: -41px;
+  top: -40px;
   left: -1px;
   height: 40px;
   width: 40px;
   border-bottom-left-radius: 82px;
   background: transparent;
   box-shadow: 0 20px 0 0 #1E2023;
+}
+
+.vs-input {
+  background: #141417;
+}
+
+.vs-input:focus {
+  background: #141417;
+}
+
+.vs-input__icon {
+  background: #121212;
+}
+
+.vs-input:focus~.vs-input__icon {
+  background: #18191C;
+  box-shadow: 20px 20px 60px #141518,
+  -20px -20px 60px #1c1d20;
 }

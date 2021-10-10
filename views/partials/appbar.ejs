@@ -1,3 +1,9 @@
 <v-app-bar color="#1E2023" class="appbar" flat dense app>
   <v-app-bar-title>Railer</v-app-bar-title>
+  <v-spacer></v-spacer>
+  <vs-input v-model="search" type="search" placeholder="Search">
+    <template #icon>
+      <v-icon small>mdi-magnify</v-icon>
+    </template>
+  </vs-input>
 </v-app-bar>
