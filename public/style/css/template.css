@@ -97,18 +97,32 @@
 
 .vs-input {
   background: #141417;
-}
-
-.vs-input:focus {
-  background: #141417;
+  color: #fff;
 }
 
 .vs-input__icon {
   background: #121212;
 }
 
+.vs-input:focus {
+  background: #141417;
+}
+
 .vs-input:focus~.vs-input__icon {
-  background: #18191C;
+  background: #6200EA;
   box-shadow: 20px 20px 60px #141518,
   -20px -20px 60px #1c1d20;
+}
+
+.vs-input-content {
+  width: 100%;
+}
+
+.vs-input {
+  width: 100%
+}
+
+.v-dialog {
+  border-radius: 20px;
+  overflow-x: hidden;
 }
