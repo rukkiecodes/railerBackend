@@ -1,12 +1,11 @@
 <v-app-bar color="#1E2023" class="appbar" flat dense app>
+  <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-lg-and-up"></v-app-bar-nav-icon>
   <v-app-bar-title>Railer</v-app-bar-title>
   <v-spacer></v-spacer>
-  <vs-input v-model="search" type="search" placeholder="Search">
+  <vs-input v-model="search" class="hidden-xs-only" type="search" placeholder="Search">
     <template #icon>
       <v-icon small>mdi-magnify</v-icon>
     </template>
   </vs-input>
-  <vs-button color="#6200EA" floating class="text-body-2 ml-2">
-    Get started
-  </vs-button>
+  <%- include('../partials/appbarMenu') %>
 </v-app-bar>

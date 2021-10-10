@@ -1,6 +1,6 @@
 <% for(let template of templates ){ %>
 <v-hover v-slot="{ hover }">
-  <v-card class="card mb-4 rounded-lg" color="grey lighten-4">
+  <v-card class="card mb-6 mb-sm-4 rounded-lg" color="grey lighten-4">
     <v-img src="<%= template.image %>">
       <v-expand-transition>
         <v-card v-if="hover" class="pa-3 transition-fast-in-fast-out v-card--reveal" style="height: 100%;">

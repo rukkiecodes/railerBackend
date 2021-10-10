@@ -4,13 +4,36 @@
   column-gap: 1;
 }
 
+.cardsMobile {
+  width: 100%;
+  column-count: 1;
+  column-gap: 1;
+}
+
 .cardsTab {
   width: 100%;
   column-count: 4;
   column-gap: 1;
 }
 
-.cards .card {
+.cardsIpadPro {
+  width: 100%;
+  column-count: 4;
+  column-gap: 1;
+}
+
+.cardsLargeScreens {
+  width: 100%;
+  column-count: 6;
+  column-gap: 1;
+}
+.cardsExtraLargeScreens {
+  width: 100%;
+  column-count: 7;
+  column-gap: 1;
+}
+
+.card {
   width: 100%;
   height: auto;
   break-inside: avoid;

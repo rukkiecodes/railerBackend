@@ -50,6 +50,51 @@
         vsSwitch.style.background = "#121212"
       }
     },
+    computed: {
+      showNavFooter() {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            return false
+          case 'sm':
+            return false
+          case 'md':
+            return false
+          case 'lg':
+            return true
+          case 'xl':
+            return true
+        }
+      },
+      drawerMiniVariant() {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            return false
+          case 'sm':
+            return false
+          case 'md':
+            return false
+          case 'lg':
+            return true
+          case 'xl':
+            return true
+        }
+      },
+
+      designGrid() {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            return "cardsMobile"
+          case 'sm':
+            return "cardsTab"
+          case 'md':
+            return "cardsIpadPro"
+          case 'lg':
+            return "cardsLargeScreens"
+          case 'xl':
+            return "cardsExtraLargeScreens"
+        }
+      },
+    },
     vuetify: new Vuetify({
       theme: {
         dark: true
