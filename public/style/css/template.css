@@ -27,6 +27,7 @@
   column-count: 6;
   column-gap: 1;
 }
+
 .cardsExtraLargeScreens {
   width: 100%;
   column-count: 7;
@@ -84,7 +85,7 @@
 }
 
 .navfooter {
-  z-index: 5;
+  z-index: 10;
 }
 
 .navfooter:before {
@@ -115,7 +116,7 @@
 .vs-input:focus~.vs-input__icon {
   background: #6200EA;
   box-shadow: 20px 20px 60px #141518,
-  -20px -20px 60px #1c1d20;
+    -20px -20px 60px #1c1d20;
 }
 
 .vs-input-content {

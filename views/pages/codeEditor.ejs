@@ -5,12 +5,14 @@
   <%- include('../partials/navfooter') %>
   <v-main>
     <v-container fluid class="pa-0">
-      <v-sheet height="93vh" class="codeEditorContainer" color="red rounded-tl-xl rounded-tr-xl .rounded-bl-xl">
+      <v-sheet height="93vh" class="codeEditorContainer" color="rounded-tl-xl rounded-tr-xl .rounded-bl-xl">
         <v-row no-gutters justify="space-between" align="start" style="width: 100%; height: 100%">
           <v-col cols="6" style="width: 100%; height: 100%">
-            <div style="width: 100%; height: 100%" id="codeEditor"></div>
+            <div style="width: 100%; height: 100%" class="codeEditorClass" id="codeEditor"></div>
           </v-col>
-          <v-col cols="6"></v-col>
+          <v-col cols="6" style="width: 100%; height: 100%">
+            <v-sheet flat color="white" class="grey--text text--darken-4" width="100%" height="100%" v-html="html"></v-sheet>
+          </v-col>
         </v-row>
       </v-sheet>
     </v-container>

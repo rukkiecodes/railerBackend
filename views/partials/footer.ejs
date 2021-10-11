@@ -5,6 +5,8 @@
 <script src="/script/ace/src-min/mode-html.js"></script>
 <script src="/script/emmet.js"></script>
 <script src="/script/ace/src-min/ext-emmet.js"></script>
+<script src="/script/ace/src-min/ext-language_tools.js"></script>
+<script src="/script/ace/src-min/ext-elastic_tabstops_lite.js"></script>
 <script src="/reload/reload.js"></script>
 
 <script>
@@ -49,7 +51,8 @@
       password: "",
       remember: true,
       codeEditorWidth: null,
-      codeEditorHeight: null
+      codeEditorHeight: null,
+      html: ``
     },
     mounted() {
       const drawerBorder = document.querySelector(".v-navigation-drawer__border")
@@ -87,10 +90,31 @@
             useSoftTabs: true,
             navigateWithinSoftTabs: true,
             enableMultiselect: true,
-            enableEmmet: true
+            enableEmmet: true,
+            wrap: false,
+            showPrintMargin: false,
+            showFoldWidgets: true,
+            fadeFoldWidgets: true,
+            showGutter: true,
+            scrollPastEnd: true,
+            newLineMode: "auto",
+            useWorker: true,
+            useSoftTabs: true,
+            tabSize: 3,
+            enableBasicAutocompletion: true,
+            enableLiveAutocompletion: true,
+            enableSnippets: true,
+            useElasticTabstops: true,
+            highlightGutterLine: true
           })
         }
       }
+
+      // Get value of code editor
+      setInterval(() => {
+        console.log(codeEditor.getValue())
+        this.html = codeEditor.getValue()
+      }, 2000)
       editorLib.init()
     },
     methods: {
