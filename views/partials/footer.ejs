@@ -43,7 +43,6 @@
       menu: false,
       message: false,
       hints: true,
-      appMode: true,
       search: "",
       logginDialog: false,
       signupDialog: false,
@@ -52,7 +51,8 @@
       remember: true,
       codeEditorWidth: null,
       codeEditorHeight: null,
-      html: ``
+      html: ``,
+      appMode: true
     },
     mounted() {
       const drawerBorder = document.querySelector(".v-navigation-drawer__border")
@@ -64,58 +64,62 @@
         vsSwitch.style.background = "#121212"
       }
 
-      // Setup ace
-      let codeEditor = ace.edit("codeEditor")
+      const editorContainer = document.querySelector("#codeEditor")
 
-      // Configure ace
-      let editorLib = {
-        init() {
-          // set theme
-          codeEditor.setTheme("ace/theme/dracula")
+      if (editorContainer) {
+        // Setup ace
+        let codeEditor = ace.edit("codeEditor")
 
-          // set language mode
-          codeEditor.session.setMode("ace/mode/html")
+        // Configure ace
+        let editorLib = {
+          init() {
+            // set theme
+            codeEditor.setTheme("ace/theme/dracula")
 
-          // set options
-          codeEditor.setOptions({
-            fontFamily: "Victor mono",
-            fontSize: '12pt',
-            highlightActiveLine: true,
-            highlightSelectedWord: true,
-            cursorStyle: "smooth",
-            behavioursEnabled: true,
-            wrapBehavioursEnabled: true,
-            autoScrollEditorIntoView: true,
-            copyWithEmptySelection: true,
-            useSoftTabs: true,
-            navigateWithinSoftTabs: true,
-            enableMultiselect: true,
-            enableEmmet: true,
-            wrap: false,
-            showPrintMargin: false,
-            showFoldWidgets: true,
-            fadeFoldWidgets: true,
-            showGutter: true,
-            scrollPastEnd: true,
-            newLineMode: "auto",
-            useWorker: true,
-            useSoftTabs: true,
-            tabSize: 3,
-            enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true,
-            enableSnippets: true,
-            useElasticTabstops: true,
-            highlightGutterLine: true
-          })
+            // set language mode
+            codeEditor.session.setMode("ace/mode/html")
+
+            // set options
+            codeEditor.setOptions({
+              fontFamily: "Victor mono",
+              fontSize: '12pt',
+              highlightActiveLine: true,
+              highlightSelectedWord: true,
+              cursorStyle: "smooth",
+              behavioursEnabled: true,
+              wrapBehavioursEnabled: true,
+              autoScrollEditorIntoView: true,
+              copyWithEmptySelection: true,
+              useSoftTabs: true,
+              navigateWithinSoftTabs: true,
+              enableMultiselect: true,
+              enableEmmet: true,
+              wrap: true,
+              showPrintMargin: false,
+              showFoldWidgets: true,
+              fadeFoldWidgets: true,
+              showGutter: true,
+              scrollPastEnd: true,
+              newLineMode: "auto",
+              useWorker: true,
+              useSoftTabs: true,
+              tabSize: 3,
+              enableBasicAutocompletion: true,
+              enableLiveAutocompletion: true,
+              enableSnippets: true,
+              useElasticTabstops: true,
+              highlightGutterLine: true
+            })
+          }
         }
+
+        // Get value of code editor
+        setInterval(() => {
+          this.html = codeEditor.getValue()
+        }, 200)
+        editorLib.init()
       }
 
-      // Get value of code editor
-      setInterval(() => {
-        console.log(codeEditor.getValue())
-        this.html = codeEditor.getValue()
-      }, 2000)
-      editorLib.init()
     },
     methods: {
       gotoLoggin() {
@@ -128,20 +132,6 @@
       }
     },
     computed: {
-      showNavFooter() {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs':
-            return false
-          case 'sm':
-            return false
-          case 'md':
-            return false
-          case 'lg':
-            return true
-          case 'xl':
-            return true
-        }
-      },
       drawerMiniVariant() {
         switch (this.$vuetify.breakpoint.name) {
           case 'xs':
