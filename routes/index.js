@@ -34,6 +34,13 @@ router.get("/codeEditor", ensureGuest, (req, res) => {
   res.render("pages/codeEditor")
 })
 
+// @desc preview design
+// @route GET /previewDesign
+
+router.get("/previewDesign", ensureGuest, (req, res) => {
+  res.render("pages/previewDesign")
+})
+
 // @desc Login/Landing page
 // @route GET /
 
