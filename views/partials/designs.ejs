@@ -4,6 +4,7 @@
     <v-img src="<%= template.image %>">
       <v-expand-transition>
         <v-card v-if="hover" class="pa-3 transition-fast-in-fast-out v-card--reveal" style="height: 100%;">
+          <v-card-text class="py-0 text-center text-body-1 text-capitalize"><%= template.category %></v-card-text>
           <vs-button block size="small" color="#6200EA" class="gs rounded-lg">
             Get started
           </vs-button>

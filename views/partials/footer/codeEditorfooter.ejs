@@ -48,7 +48,6 @@
       menu: false,
       search: "",
       html: ``,
-      appMode: true,
     },
     mounted() {
       const drawerBorder = document.querySelector(".v-navigation-drawer__border")
@@ -78,7 +77,7 @@
             // set options
             codeEditor.setOptions({
               fontFamily: "Victor mono",
-              fontSize: '12pt',
+              fontSize: '10pt',
               highlightActiveLine: true,
               highlightSelectedWord: true,
               cursorStyle: "smooth",
@@ -112,7 +111,13 @@
         // Get value of code editor
         setInterval(() => {
           this.html = codeEditor.getValue()
-        }, 200)
+
+          // try {
+          //   new Function(this.html)()
+          // } catch (error) {
+          //   console.log(error)
+          // }
+        }, 3000)
         editorLib.init()
       }
     },
