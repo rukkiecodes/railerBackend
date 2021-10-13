@@ -4,10 +4,12 @@ const { ensureAuth, ensureGuest } = require("../middlewares/auth")
 const Story = require("../models/Story")
 const fs = require("fs")
 
+// get all template designs
+const templates = JSON.parse(fs.readFileSync("templates.json", "utf8"))
+
 // @desc template page
 // @route GET /template
 router.get("/", (req, res) => {
-  const templates = JSON.parse(fs.readFileSync("templates.json", "utf8"))
   res.render("pages/template", {
     templates,
   })
@@ -65,7 +67,6 @@ router.get("/previewDesign", ensureGuest, (req, res) => {
 //     layout: "forgotPassword",
 //   })
 // })
-
 
 // @desc codeEditor page
 // @route GET /template
