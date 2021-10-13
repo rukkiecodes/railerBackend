@@ -1,17 +1,23 @@
+<!-- Import vue and vue material designs -->
 <script src="/script/vue.js"></script>
 <script src="/script/vuetify.js"></script>
 <script src="/script/vuesax.min.js"></script>
+
+<!-- Import ace editor -->
 <script src="/script/ace/src-min/ace.js"></script>
 <script src="/script/ace/src-min/mode-html.js"></script>
 <script src="/script/emmet.js"></script>
 <script src="/script/ace/src-min/ext-emmet.js"></script>
 <script src="/script/ace/src-min/ext-language_tools.js"></script>
 <script src="/script/ace/src-min/ext-elastic_tabstops_lite.js"></script>
+
+
+<!-- import reload -->
 <script src="/reload/reload.js"></script>
 
 <script>
   new Vue({
-    el: '#main',
+    el: '#railerCodeEditor',
     data: {
       drawer: true,
       routes: [{
@@ -39,20 +45,10 @@
           location: window.location.pathname
         },
       ],
-      fav: true,
       menu: false,
-      message: false,
-      hints: true,
       search: "",
-      logginDialog: false,
-      signupDialog: false,
-      email: "",
-      password: "",
-      remember: true,
-      codeEditorWidth: null,
-      codeEditorHeight: null,
       html: ``,
-      appMode: true
+      appMode: true,
     },
     mounted() {
       const drawerBorder = document.querySelector(".v-navigation-drawer__border")
@@ -119,17 +115,6 @@
         }, 200)
         editorLib.init()
       }
-
-    },
-    methods: {
-      gotoLoggin() {
-        this.signupDialog = false
-        this.logginDialog = true
-      },
-      gotoSignup() {
-        this.logginDialog = false
-        this.signupDialog = true
-      }
     },
     computed: {
       drawerMiniVariant() {
@@ -144,21 +129,6 @@
             return true
           case 'xl':
             return true
-        }
-      },
-
-      designGrid() {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs':
-            return "cardsMobile"
-          case 'sm':
-            return "cardsTab"
-          case 'md':
-            return "cardsIpadPro"
-          case 'lg':
-            return "cardsLargeScreens"
-          case 'xl':
-            return "cardsExtraLargeScreens"
         }
       },
     },

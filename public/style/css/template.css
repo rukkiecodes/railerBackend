@@ -90,3 +90,8 @@
   border-radius: 20px;
   overflow-x: hidden;
 }
+
+#gjs {
+  width: 100%;
+  height: 100%
+}
