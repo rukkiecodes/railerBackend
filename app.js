@@ -19,9 +19,11 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"))
 }
 
+// Routes
+app.use("/auth", require("./routes/auth"))
+
 // Static folder
 app.use(express.static(path.join(__dirname, "public")))
-app.use(express.static(path.join(__dirname, "uploads")))
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>
