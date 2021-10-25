@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/share/.config/yarn/global/node_modules/node/bin/node /usr/local/bin/yarn add request
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/rukkiecodes/Android/Sdk/emulator:/home/rukkiecodes/Android/Sdk/tools:/home/rukkiecodes/Android/Sdk/tools/bin:/home/rukkiecodes/Android/Sdk/platform-tools:/home/rukkiecodes/Android/Sdk/emulator:/home/rukkiecodes/Android/Sdk/tools:/home/rukkiecodes/Android/Sdk/tools/bin:/home/rukkiecodes/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.3.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/rukkiecodes/.cache/yarn/v6/npm-uri-js-4.4.1-9b1a52595225859e55f669d928f88c6c57f2a77e-integrity/node_modules/uri-js/dist/esnext/schemes/http.d.ts' -> '/home/rukkiecodes/Documents/projects/node/railer/node_modules/uri-js/dist/esnext/schemes/http.d.ts'
+
+npm manifest: 
+  {
+    "name": "railer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "cross-env NODE_ENV=production node app",
+      "dev": "cross-env NODE_ENV=development nodemon app"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "bcrypt": "^5.0.1",
+      "body-parser": "^1.19.0",
+      "dotenv": "^10.0.0",
+      "ejs": "^3.1.6",
+      "express": "^4.17.1",
+      "googleapis": "^89.0.0",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^6.0.12",
+      "morgan": "^1.10.0",
+      "multer": "^1.4.3",
+      "nodemailer": "^6.7.0"
+    },
+    "devDependencies": {
+      "cross-env": "^7.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
